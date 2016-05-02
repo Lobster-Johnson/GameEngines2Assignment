@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Klendathu drop.unity
+- path: Assets/Scenes/Klendathu drop.unity
   isLoaded: 1
   isActive: 1
