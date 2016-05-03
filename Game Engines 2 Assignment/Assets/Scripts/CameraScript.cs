@@ -33,11 +33,19 @@ public class CameraScript : MonoBehaviour
             Scene3();
             switch2 = true;
         }
+
+        //change to the third camera angle
+        check = eventmanager.GetComponent<Events>().Scene4;
+        if (check && !switch3)
+        {
+            Scene4();
+            switch3 = true;
+        }
     }
 
     void Scene2()
     {
-        this.transform.position = new Vector3(10, 10, 25);
+        this.transform.position = new Vector3(10, 7.5f, 25);
         this.transform.LookAt(new Vector3(-10, -5, 30));
         
         
@@ -45,7 +53,13 @@ public class CameraScript : MonoBehaviour
 
     void Scene3()
     {
-        this.transform.position = new Vector3(-10, 30, 35);
+        this.transform.position = new Vector3(-10, 25, 35);
         this.transform.LookAt(new Vector3(-50, -150, 200));
+    }
+
+    void Scene4()
+    {
+        this.transform.position = new Vector3(6, -10, 130);
+        this.transform.LookAt(new Vector3(-32, 4, 80));
     }
 }

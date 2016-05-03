@@ -7,6 +7,7 @@ public class ProjectileBehaviour : MonoBehaviour
     public float maxSpeed = 7.5f;
     public Vector3 velocity = Vector3.zero;
     public float mass = 0.5f;
+    public GameObject Explosion;
 
     // Use this for initialization
     void Start ()
@@ -14,7 +15,8 @@ public class ProjectileBehaviour : MonoBehaviour
 	
 	}
 	
-	// Update is called once per frame
+	// projectile keeps flying at it's destination
+    //if it passes it it dies
 	void Update ()
     {
 	    if(this.transform.position.y >= dest.y)
@@ -38,7 +40,20 @@ public class ProjectileBehaviour : MonoBehaviour
     {
         if (col.gameObject.tag == "Cruiser")
         {
+            //explode
+            Vector3 location = (this.transform.position);
+            GameObject blast = Instantiate(Explosion);
+            blast.transform.position = location;
+
+            HitChange();
             Destroy(this.gameObject);
         }
+    }
+
+    //change scene when a ship gets hit
+    void HitChange()
+    {
+        GameObject[] events = GameObject.FindGameObjectsWithTag("Event");
+        events[0].GetComponent<Events>().Hit();
     }
 }

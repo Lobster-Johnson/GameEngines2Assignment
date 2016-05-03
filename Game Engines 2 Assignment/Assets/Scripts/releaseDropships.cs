@@ -43,14 +43,14 @@ public class releaseDropships : MonoBehaviour
             Ship.transform.position = new Vector3(start.x -1, start.y,  start.z + i);
 
             //give orders
-            Ship.GetComponent<Navigation>();
+            Ship.GetComponent<Boid>();
 
             Vector3 flyalong = new Vector3(start.x - 5, start.y  - 5, start.z + i);
             //Vector3 descend = new Vector3(x + 1, 0, -1);
             Vector3 dropsite = target.transform.position;
 
-            Ship.GetComponent<Navigation>().neworders(flyalong);
-            Ship.GetComponent<Navigation>().neworders(dropsite);
+            Ship.GetComponent<Boid>().neworders(flyalong);
+            Ship.GetComponent<Boid>().neworders(dropsite);
         }
 
         //left side
@@ -63,14 +63,14 @@ public class releaseDropships : MonoBehaviour
             Ship.transform.position = new Vector3(start.x + 1, start.y, start.z + i);
 
             //give orders
-            Ship.GetComponent<Navigation>();
+            Ship.GetComponent<Boid>();
 
             Vector3 flyalong = new Vector3(start.x + 5, start.y - 5, start.z + i);
             //Vector3 descend = new Vector3(x + 1, 0, -1);
             Vector3 dropsite = target.transform.position;
 
-            Ship.GetComponent<Navigation>().neworders(flyalong);
-            Ship.GetComponent<Navigation>().neworders(dropsite);
+            Ship.GetComponent<Boid>().neworders(flyalong);
+            Ship.GetComponent<Boid>().neworders(dropsite);
         }
     }
 }

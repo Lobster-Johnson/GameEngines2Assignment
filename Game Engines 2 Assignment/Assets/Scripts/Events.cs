@@ -22,4 +22,13 @@ public class Events : MonoBehaviour
             Scene3 = true;
         }
     }
+
+    public void Hit()
+    {
+        if(!Scene4)
+        {
+            Scene4 = true;
+            Debug.Log("A Hit!");
+        }
+    }
 }

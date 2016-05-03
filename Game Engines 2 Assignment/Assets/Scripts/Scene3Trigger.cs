@@ -6,6 +6,7 @@ public class Scene3Trigger : MonoBehaviour
     bool mid;
     public GameObject eventmananger;
 
+    //when the fleet goes beyond the halfway point it changes to scene 3
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Cruiser")
